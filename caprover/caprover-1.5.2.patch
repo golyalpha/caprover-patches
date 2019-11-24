@@ -1,0 +1,36 @@
+diff --git a/src/utils/CaptainConstants.ts b/src/utils/CaptainConstants.ts
+index 9d9224d..0e29f61 100644
+--- a/src/utils/CaptainConstants.ts
++++ b/src/utils/CaptainConstants.ts
+@@ -15,7 +15,7 @@ const CONSTANT_FILE_OVERRIDE_USER =
+     CAPTAIN_DATA_DIRECTORY + '/config-override.json'
+ 
+ const configs = {
+-    publishedNameOnDockerHub: 'caprover/caprover',
++    publishedNameOnDockerHub: 'golyalpha/caprover',
+ 
+     version: '1.5.2',
+ 
+@@ -31,11 +31,11 @@ const configs = {
+ 
+     registrySubDomainPort: 996,
+ 
+-    netDataImageName: 'titpetric/netdata:1.8',
++    netDataImageName: 'golyalpha/netdata:1.8',
+ 
+     registryImageName: 'registry:2',
+ 
+-    appPlaceholderImageName: 'caprover/caprover-placeholder-app:latest',
++    appPlaceholderImageName: 'golyalpha/caprover-placeholder-app:latest',
+ 
+     nginxImageName: 'nginx:1',
+ 
+@@ -117,7 +117,7 @@ let data = {
+ 
+     // ********************* Local Docker Constants  ************************
+ 
+-    certbotImageName: 'caprover/certbot-sleeping:v0.29.1',
++    certbotImageName: 'golyalpha/certbot-sleeping:v0.29.1',
+ 
+     captainSaltSecretKey: 'captain-salt',
+ 

@@ -1,0 +1,35 @@
+diff --git a/releases/v1.8.0/Dockerfile b/releases/v1.8.0/Dockerfile
+index fa6a024..ccec8e1 100644
+--- a/releases/v1.8.0/Dockerfile
++++ b/releases/v1.8.0/Dockerfile
+@@ -1,4 +1,4 @@
+-FROM debian:jessie
++FROM ubuntu
+ 
+ ADD git-tag /git-tag
+ 
+diff --git a/releases/v1.8.0/scripts/build.sh b/releases/v1.8.0/scripts/build.sh
+index ccb5aaf..8be6141 100644
+--- a/releases/v1.8.0/scripts/build.sh
++++ b/releases/v1.8.0/scripts/build.sh
+@@ -2,11 +2,6 @@
+ set -e
+ DEBIAN_FRONTEND=noninteractive
+ 
+-# some mirrors have issues, i skipped httpredir in favor of an eu mirror
+-
+-echo "deb http://ftp.nl.debian.org/debian/ jessie main" > /etc/apt/sources.list
+-echo "deb http://security.debian.org/debian-security jessie/updates main" >> /etc/apt/sources.list
+-
+ # install dependencies for build
+ 
+ apt-get -qq update
+@@ -39,7 +34,7 @@ fi
+ cd /
+ rm -rf /netdata.git
+ 
+-dpkg -P zlib1g-dev uuid-dev libmnl-dev gcc make git autoconf autogen automake pkg-config
++apt-get -y remove zlib1g-dev uuid-dev libmnl-dev gcc make git autoconf autogen automake pkg-config
+ apt-get -y autoremove
+ apt-get clean
+ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
